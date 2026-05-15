@@ -248,18 +248,19 @@ nav { flex: 1; }
 }
 
 .home-hero-hl {
-  font-size: 56px;
+  font-size: 48px;
   font-weight: 800;
-  color: #fff;
+  color: #c8a96e;
   line-height: 1.1;
   letter-spacing: -1px;
 }
 
 .home-hero-sub {
-  font-size: 13px;
-  color: rgba(255,255,255,0.55);
-  margin-top: 16px;
-  letter-spacing: 0.04em;
+  font-size: 22px;
+  font-weight: 700;
+  color: #c8a96e;
+  margin-bottom: 16px;
+  letter-spacing: 0.02em;
 }
 
 .home-hero-sub2 {
