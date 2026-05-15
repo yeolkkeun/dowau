@@ -1222,6 +1222,21 @@
 
     prevBtn.addEventListener('click', () => goTo(idx - 1));
     nextBtn.addEventListener('click', () => goTo(idx + 1));
+
+    // 모바일 터치 스와이프
+    let touchStartX = 0;
+    let touchEndX = 0;
+    const SWIPE_THRESHOLD = 50;
+    track.addEventListener('touchstart', (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+    track.addEventListener('touchend', (e) => {
+      touchEndX = e.changedTouches[0].screenX;
+      const dx = touchEndX - touchStartX;
+      if (Math.abs(dx) < SWIPE_THRESHOLD) return;
+      if (dx < 0) goTo(idx + 1); // 왼쪽으로 스와이프 → 다음
+      else goTo(idx - 1);        // 오른쪽으로 스와이프 → 이전
+    }, { passive: true });
   }
 
   initCaseSlider('prog2SliderTrack', 'prog2Dots', 'prog2Prev', 'prog2Next');
