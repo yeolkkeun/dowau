@@ -1135,7 +1135,7 @@
           card.target = '_blank';
           card.rel = 'noopener';
           card.innerHTML =
-            '<div class="blog-thumb">' + (thumb ? '<img src="' + thumb + '" alt="" loading="lazy">' : '') + '<div class="blog-cat">블로그</div></div>' +
+            '<div class="blog-thumb">' + (thumb ? '<img src="' + thumb + '" alt="" loading="lazy" referrerpolicy="no-referrer">' : '') + '<div class="blog-cat">블로그</div></div>' +
             '<div class="blog-content">' +
               '<div class="blog-card-title">' + item.title + '</div>' +
               '<div class="blog-card-desc">' + desc + (desc.length >= 80 ? '…' : '') + '</div>' +
