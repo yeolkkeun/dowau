@@ -1118,8 +1118,8 @@
   function loadBlogPosts() {
     const grid = document.querySelector('#blog .blog-grid');
     if (!grid || grid.dataset.loaded) return;
-    const RSS_URL = 'https://blog.naver.com/PostRss.naver?blogId=diet-999';
-    const API = 'https://api.rss2json.com/v1/api.json?rss_url=' + encodeURIComponent(RSS_URL) + '&count=6';
+    const RSS_URL = 'https://rss.blog.naver.com/diet-999.xml';
+    const API = 'https://api.rss2json.com/v1/api.json?rss_url=' + encodeURIComponent(RSS_URL);
     fetch(API)
       .then(function(r) { return r.json(); })
       .then(function(data) {
@@ -1154,7 +1154,7 @@
     if (!grid || grid.dataset.loaded) return;
     var CHANNEL = 'UCmd6ESuIOTy4MyGSCWnvZHA';
     var RSS_URL = 'https://www.youtube.com/feeds/videos.xml?channel_id=' + CHANNEL;
-    var API = 'https://api.rss2json.com/v1/api.json?rss_url=' + encodeURIComponent(RSS_URL) + '&count=6';
+    var API = 'https://api.rss2json.com/v1/api.json?rss_url=' + encodeURIComponent(RSS_URL);
     fetch(API)
       .then(function(r) { return r.json(); })
       .then(function(data) {
