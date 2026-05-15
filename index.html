@@ -1161,7 +1161,15 @@
         if (data.status !== 'ok' || !data.items || !data.items.length) return;
         grid.innerHTML = '';
         data.items.slice(0, 6).forEach(function(item) {
-          var vidId = (item.link.split('v=')[1] || '').split('&')[0];
+          // 영상 ID 추출: regular(?v=), Shorts(/shorts/), youtu.be 모두 대응
+          var vidId = '';
+          var m = item.link.match(/[?&]v=([^&]+)/) || item.link.match(/\/shorts\/([^?&/]+)/) || item.link.match(/youtu\.be\/([^?&/]+)/);
+          if (m) vidId = m[1];
+          // RSS 자체에 들어있는 yt:videoId(guid) fallback
+          if (!vidId && item.guid) {
+            var g = item.guid.match(/yt:video:([^:]+)/) || item.guid.match(/([A-Za-z0-9_-]{11})$/);
+            if (g) vidId = g[1];
+          }
           var date = new Date(item.pubDate).toLocaleDateString('ko-KR', { year: 'numeric', month: '2-digit', day: '2-digit' });
           var card = document.createElement('a');
           card.className = 'yt-card';
