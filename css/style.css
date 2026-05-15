@@ -3641,21 +3641,21 @@ nav { flex: 1; }
   .prog2-item > *,
   .prog2-item--reverse > * { direction: ltr !important; }
 
-  /* 사진 먼저, 글 나중 — order로 강제 */
+  /* 글 먼저, 사진 나중 — order로 강제 */
+  .prog2-item .prog2-item-body,
+  .prog2-item--reverse .prog2-item-body {
+    order: 1 !important;
+    grid-row: auto !important;
+    grid-column: 1 !important;
+    padding: 32px 24px !important;
+  }
   .prog2-item .prog2-item-photo,
   .prog2-item--reverse .prog2-item-photo {
-    order: 1 !important;
+    order: 2 !important;
     grid-row: auto !important;
     grid-column: 1 !important;
     width: 100% !important;
     height: 240px !important;
-  }
-  .prog2-item .prog2-item-body,
-  .prog2-item--reverse .prog2-item-body {
-    order: 2 !important;
-    grid-row: auto !important;
-    grid-column: 1 !important;
-    padding: 32px 24px !important;
   }
 
   .prog2-item-num { font-size: 11px; margin-bottom: 12px; }
