@@ -3371,14 +3371,17 @@ nav { flex: 1; }
     right: 24px;
   }
   .home-hero-hl {
-    font-size: 38px;
+    font-size: 30px;
     line-height: 1.15;
     letter-spacing: -0.5px;
     color: #c8a96e;
   }
   .home-hero-sub {
-    font-size: 12px;
-    margin-top: 28px;
+    font-size: 16px;
+    color: #c8a96e;
+    font-weight: 700;
+    margin-top: 0;
+    margin-bottom: 14px;
   }
   .home-hero-sub2 {
     font-size: 14px;
