@@ -1133,6 +1133,18 @@
 
   initReveal();
 
+  // 외부 RSS 데이터를 innerHTML에 넣기 전에 HTML 엔티티 escape
+  function esc(s) {
+    return String(s == null ? '' : s)
+      .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+  }
+  // http/https URL만 허용 (javascript:, data: 등 차단)
+  function safeUrl(u) {
+    var s = String(u || '');
+    return /^https?:\/\//i.test(s) ? s : '';
+  }
+
   // RSS: 블로그 포스트 로드
   function loadBlogPosts() {
     const grid = document.querySelector('#blog .blog-grid');
@@ -1146,19 +1158,19 @@
         grid.innerHTML = '';
         data.items.slice(0, 6).forEach(function(item) {
           var date = new Date(item.pubDate).toLocaleDateString('ko-KR', { year: 'numeric', month: '2-digit', day: '2-digit' });
-          var thumb = item.thumbnail || (item.enclosure && item.enclosure.link) || '';
+          var thumb = safeUrl(item.thumbnail || (item.enclosure && item.enclosure.link) || '');
           var desc = (item.description || '').replace(/<[^>]+>/g, '').trim().slice(0, 80);
           var card = document.createElement('a');
           card.className = 'blog-card';
-          card.href = item.link;
+          card.href = safeUrl(item.link) || '#';
           card.target = '_blank';
-          card.rel = 'noopener';
+          card.rel = 'noopener noreferrer';
           card.innerHTML =
-            '<div class="blog-thumb">' + (thumb ? '<img src="' + thumb + '" alt="" loading="lazy" referrerpolicy="no-referrer">' : '') + '<div class="blog-cat">블로그</div></div>' +
+            '<div class="blog-thumb">' + (thumb ? '<img src="' + esc(thumb) + '" alt="" loading="lazy" referrerpolicy="no-referrer">' : '') + '<div class="blog-cat">블로그</div></div>' +
             '<div class="blog-content">' +
-              '<div class="blog-card-title">' + item.title + '</div>' +
-              '<div class="blog-card-desc">' + desc + (desc.length >= 80 ? '…' : '') + '</div>' +
-              '<div class="blog-card-meta"><span>' + date + '</span><span class="blog-card-arrow">→</span></div>' +
+              '<div class="blog-card-title">' + esc(item.title) + '</div>' +
+              '<div class="blog-card-desc">' + esc(desc) + (desc.length >= 80 ? '…' : '') + '</div>' +
+              '<div class="blog-card-meta"><span>' + esc(date) + '</span><span class="blog-card-arrow">→</span></div>' +
             '</div>';
           grid.appendChild(card);
         });
@@ -1190,19 +1202,21 @@
             if (g) vidId = g[1];
           }
           var date = new Date(item.pubDate).toLocaleDateString('ko-KR', { year: 'numeric', month: '2-digit', day: '2-digit' });
+          // vidId는 정규식으로 [A-Za-z0-9_-] 만 매치되므로 추가 escape 불필요하지만 방어적 처리
+          var safeVid = /^[A-Za-z0-9_-]+$/.test(vidId) ? vidId : '';
           var card = document.createElement('a');
           card.className = 'yt-card';
-          card.href = item.link;
+          card.href = safeUrl(item.link) || '#';
           card.target = '_blank';
-          card.rel = 'noopener';
+          card.rel = 'noopener noreferrer';
           card.innerHTML =
             '<div class="yt-thumb">' +
-              (vidId ? '<img src="https://img.youtube.com/vi/' + vidId + '/mqdefault.jpg" alt="" loading="lazy">' : '') +
+              (safeVid ? '<img src="https://img.youtube.com/vi/' + safeVid + '/mqdefault.jpg" alt="" loading="lazy">' : '') +
               '<div class="yt-play"></div>' +
             '</div>' +
             '<div class="yt-content">' +
-              '<div class="yt-card-title">' + item.title + '</div>' +
-              '<div class="yt-card-meta">도와유 · ' + date + '</div>' +
+              '<div class="yt-card-title">' + esc(item.title) + '</div>' +
+              '<div class="yt-card-meta">도와유 · ' + esc(date) + '</div>' +
               '<div class="yt-card-arrow">→</div>' +
             '</div>';
           grid.appendChild(card);
