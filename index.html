@@ -176,12 +176,10 @@
             <div class="home-review-card">
               <span class="home-review-badge">월 매출 1억 달성</span>
               <p class="home-review-quote">"10년 차 직장인으로 살아오던 저는, 늘 '내 일을 하고 싶다'는 꿈이 있었습니다. '사명 기반 코칭'을 통해 브랜드의 방향이 또렷해지고, 콘텐츠에도 생명이 불어넣어졌습니다. 도와유 코칭 이후 구조가 생겼고, 지금은 월 매출 1억을 달성했습니다."</p>
-              <p class="home-review-result">✓ 월 매출 1억 달성</p>
             </div>
             <div class="home-review-card">
               <span class="home-review-badge">런칭 즉시 마감</span>
               <p class="home-review-quote">"제가 도와쌤의 과제로 유튜브를 시작한 지 6개월. 3개월째부터 인생이 바뀌기 시작했습니다. 첫 유료 컨텐츠를 오픈했고, 30명의 정원을 하루만에 마감하며 성공적인 런칭을 했습니다."</p>
-              <p class="home-review-result">✓ 30명 정원 하루 만에 마감</p>
             </div>
           </div>
           <!-- 후기 마퀴 행 1: review (→ 왼쪽) -->
@@ -376,7 +374,7 @@
         </div>
 
         <div class="chapter-body-center">
-          <p>1년 만에 구독자 10만 달성. 누가 봐도 '성공한 유튜버'였습니다.</p>
+          <p>1년 만에 구독자 10만 달성.<br>누가 봐도 '성공한 유튜버'였습니다.</p>
           <p>그런데 팀 인건비 빼고 나면, 남는 게 거의 없었습니다.</p>
         </div>
       </div>
@@ -491,7 +489,7 @@
           <div class="ch4-bg-content">
             <p class="ch4-made">그래서 만들었습니다.</p>
             <div class="chapter-body-center" style="margin-bottom:0">
-              <p>1기, 2기, 3기 — 매번 마감되며 운영하고 있습니다.<br><br>지금까지 함께한 수강생들이 만든 결과들이 그 증거입니다.</p>
+              <p>1기, 2기, 3기 — 매번 마감되며 운영하고 있습니다.<br><br>지금까지 함께한 수강생들이 만든<br>결과들이 그 증거입니다.</p>
               <p>저는 더 이상 외로운 유튜버가 아닙니다.</p>
               <p>이제는 <span class="gold">'동료 사업가'</span>들과 함께 갑니다.</p>
             </div>
@@ -1228,6 +1226,34 @@
 
   initCaseSlider('prog2SliderTrack', 'prog2Dots', 'prog2Prev', 'prog2Next');
   initCaseSlider('pfSliderTrack', 'pfDots', 'pfPrev', 'pfNext');
+
+  // 모바일에서 홈 프로그램 슬라이더 — 옆으로 넘길 수 있다는 시각적 힌트(peek)
+  (function() {
+    if (window.innerWidth > 768) return;
+    const track = document.querySelector('.home-slider-track');
+    if (!track) return;
+    let hinted = false;
+
+    function playHint() {
+      if (hinted) return;
+      hinted = true;
+      track.style.scrollBehavior = 'smooth';
+      track.scrollLeft = 90;
+      setTimeout(() => { track.scrollLeft = 0; }, 750);
+      setTimeout(() => { track.style.scrollBehavior = ''; }, 1600);
+    }
+
+    // 홈 페이지가 보이고 슬라이더가 화면에 들어왔을 때만 실행
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          setTimeout(playHint, 400);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.4 });
+    observer.observe(track);
+  })();
 </script>
 </body>
 </html>

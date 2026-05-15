@@ -3582,4 +3582,110 @@ nav { flex: 1; }
 
   .prog2-slider-nav { gap: 12px; margin-top: 24px; }
   .prog2-slider-btn { width: 38px; height: 38px; font-size: 16px; }
+
+  /* ════════════ PROGRAM 페이지 (10X PT) ════════════ */
+  /* 히어로 */
+  .prog2-hero { padding: 80px 24px 60px !important; min-height: auto !important; }
+  .prog2-hero-hl { font-size: 32px !important; line-height: 1.2 !important; letter-spacing: -0.5px !important; }
+  .prog2-hero-sub { font-size: 14px !important; line-height: 1.7 !important; }
+  .prog2-hero-btn { padding: 14px 32px !important; font-size: 14px !important; }
+
+  /* ② Worries (PROBLEM 섹션) */
+  .prog2-worries { padding: 60px 20px !important; }
+  .prog2-worry-cards {
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+    margin-top: 32px !important;
+  }
+  .prog2-worry-card { padding: 28px 22px !important; }
+  .prog2-worry-icon { font-size: 22px; margin-bottom: 16px; }
+  .prog2-worry-title { font-size: 18px; margin-bottom: 12px; }
+  .prog2-worry-body { font-size: 14px; line-height: 1.7; }
+
+  /* ③ Five Areas (WHAT'S INSIDE 섹션) */
+  .prog2-areas { padding: 60px 20px !important; }
+  .prog2-area-grid {
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+    margin-top: 32px !important;
+  }
+  .prog2-area-card { padding: 28px 22px !important; }
+  .prog2-area-num { font-size: 11px; margin-bottom: 12px; }
+  .prog2-area-name { font-size: 18px; margin-bottom: 10px; }
+  .prog2-area-desc { font-size: 13px; line-height: 1.7; }
+
+  /* ④ Transition 섹션 */
+  .prog2-transition { padding: 64px 24px !important; }
+  .prog2-transition-text {
+    font-size: 24px !important;
+    line-height: 1.4 !important;
+    letter-spacing: -0.3px !important;
+    margin-bottom: 14px;
+  }
+  .prog2-transition-sub { font-size: 13px; }
+
+  /* ⑤ Five Items (이미지+텍스트 좌우 → 사진 위 / 글 아래로 강제 스택) */
+  .prog2-items { padding: 60px 0 0 !important; }
+  .prog2-items > .prog2-section-label,
+  .prog2-items > .prog2-section-hl { padding: 0 24px !important; }
+  .prog2-items > .prog2-section-hl { margin-bottom: 32px !important; }
+
+  .prog2-item,
+  .prog2-item--reverse {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    grid-template-rows: auto auto !important;
+    direction: ltr !important;
+    min-height: 0 !important;
+  }
+  .prog2-item > *,
+  .prog2-item--reverse > * { direction: ltr !important; }
+
+  /* 사진 먼저, 글 나중 — order로 강제 */
+  .prog2-item .prog2-item-photo,
+  .prog2-item--reverse .prog2-item-photo {
+    order: 1 !important;
+    grid-row: auto !important;
+    grid-column: 1 !important;
+    width: 100% !important;
+    height: 240px !important;
+  }
+  .prog2-item .prog2-item-body,
+  .prog2-item--reverse .prog2-item-body {
+    order: 2 !important;
+    grid-row: auto !important;
+    grid-column: 1 !important;
+    padding: 32px 24px !important;
+  }
+
+  .prog2-item-num { font-size: 11px; margin-bottom: 12px; }
+  .prog2-item-title { font-size: 24px !important; margin-bottom: 12px; }
+  .prog2-item-lead { font-size: 15px; margin-bottom: 12px; }
+  .prog2-item-desc { font-size: 14px; line-height: 1.75; margin-bottom: 20px; }
+  .prog2-item-tags span { font-size: 11px; padding: 5px 12px; }
+
+  /* ⑥ Standards (WHO IT'S FOR 섹션) */
+  .prog2-standards { padding: 60px 20px !important; }
+  .prog2-std-cards {
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+    margin-top: 32px !important;
+  }
+  .prog2-std-card { padding: 28px 22px !important; }
+  .prog2-std-check { font-size: 18px; margin-bottom: 14px; }
+  .prog2-std-title { font-size: 18px; margin-bottom: 10px; }
+  .prog2-std-desc { font-size: 14px; line-height: 1.7; }
+
+  /* ⑧ Final CTA (가장 큰 글자 문제) */
+  .prog2-cta { min-height: 480px !important; }
+  .prog2-cta-content { padding: 0 24px !important; }
+  .prog2-cta-label { font-size: 10px; margin-bottom: 16px; }
+  .prog2-cta-hl {
+    font-size: 28px !important;
+    line-height: 1.3 !important;
+    letter-spacing: -0.5px !important;
+    margin-bottom: 16px;
+  }
+  .prog2-cta-sub { font-size: 14px !important; line-height: 1.7 !important; margin-bottom: 32px !important; }
+  .prog2-cta-btn { padding: 16px 32px !important; font-size: 14px !important; }
 }
