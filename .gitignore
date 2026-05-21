@@ -19,3 +19,9 @@ dist/
 
 # Vercel
 .vercel
+
+# Claude Code
+.claude/
+
+# 이미지 최적화 임시 작업 폴더 (스크립트 + 원본 백업)
+_opt_tmp/
