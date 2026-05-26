@@ -1483,42 +1483,78 @@
   initCaseSlider('prog2SliderTrack', 'prog2Dots', 'prog2Prev', 'prog2Next');
   initCaseSlider('pfSliderTrack', 'pfDots', 'pfPrev', 'pfNext');
 
-  // 홈 프로그램 슬라이더 — 좌우 화살표로 한 카드씩 스크롤
-  function scrollHomeSlider(dir) {
+  // 홈 프로그램 슬라이더 — 인덱스 기반으로 카드 1장씩만 이동 (스와이프 모멘텀으로 여러 장 넘어가는 문제 해결)
+  (function() {
     const track = document.getElementById('homeProgTrack');
     if (!track) return;
-    const card = track.querySelector('.home-prog-card');
-    const cardW = card ? card.getBoundingClientRect().width : track.clientWidth * 0.82;
-    const gap = 12;
-    track.scrollBy({ left: dir * (cardW + gap), behavior: 'smooth' });
-  }
+    const cards = track.querySelectorAll('.home-prog-card');
+    const total = cards.length;
+    let idx = 0;
 
-  // 모바일에서 홈 프로그램 슬라이더 — 옆으로 넘길 수 있다는 시각적 힌트(peek)
-  (function() {
-    if (window.innerWidth > 768) return;
-    const track = document.querySelector('.home-slider-track');
-    if (!track) return;
-    let hinted = false;
-
-    function playHint() {
-      if (hinted) return;
-      hinted = true;
-      track.style.scrollBehavior = 'smooth';
-      track.scrollLeft = 90;
-      setTimeout(() => { track.scrollLeft = 0; }, 750);
-      setTimeout(() => { track.style.scrollBehavior = ''; }, 1600);
+    function getStep() {
+      const cardW = cards[0].getBoundingClientRect().width;
+      return cardW + 12; // gap: 12px
     }
 
-    // 홈 페이지가 보이고 슬라이더가 화면에 들어왔을 때만 실행
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          setTimeout(playHint, 400);
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.4 });
-    observer.observe(track);
+    function goTo(n) {
+      idx = Math.max(0, Math.min(total - 1, n));
+      track.scrollTo({ left: idx * getStep(), behavior: 'smooth' });
+    }
+
+    // 전역 함수: 좌우 화살표 onclick에서 호출
+    window.scrollHomeSlider = function(dir) {
+      goTo(idx + dir);
+    };
+
+    // 터치 스와이프: 1회 제스처당 ±1장만 (모멘텀 무효화)
+    let startX = 0;
+    let startScroll = 0;
+    let moved = false;
+
+    track.addEventListener('touchstart', (e) => {
+      startX = e.touches[0].clientX;
+      startScroll = track.scrollLeft;
+      moved = false;
+    }, { passive: true });
+
+    track.addEventListener('touchmove', () => { moved = true; }, { passive: true });
+
+    track.addEventListener('touchend', (e) => {
+      if (!moved) return;
+      const dx = e.changedTouches[0].clientX - startX;
+      const step = getStep();
+      // 시작 시 인덱스 기준으로 ±1만 이동
+      const startIdx = Math.round(startScroll / step);
+      if (Math.abs(dx) < 25) {
+        // 미세 움직임 — 원위치
+        goTo(startIdx);
+      } else {
+        goTo(startIdx + (dx < 0 ? 1 : -1));
+      }
+    }, { passive: true });
+
+    // 윈도우 리사이즈 시 위치 보정
+    window.addEventListener('resize', () => {
+      if (window.innerWidth <= 768) track.scrollLeft = idx * getStep();
+    });
+
+    // 모바일 초기 peek 힌트 — "옆으로 넘길 수 있다" 시각화
+    if (window.innerWidth <= 768) {
+      let hinted = false;
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting && !hinted) {
+            hinted = true;
+            setTimeout(() => {
+              track.scrollTo({ left: 60, behavior: 'smooth' });
+              setTimeout(() => track.scrollTo({ left: 0, behavior: 'smooth' }), 700);
+            }, 500);
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.4 });
+      observer.observe(track);
+    }
   })();
 
   // 통계 바 카운트업 애니메이션 (화면에 들어오면 0 → 목표값으로 카운트)

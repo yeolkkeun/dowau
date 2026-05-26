@@ -3810,12 +3810,14 @@ nav { flex: 1; }
     -webkit-overflow-scrolling: touch;
     gap: 12px;
     padding: 0 24px;
+    scroll-behavior: smooth;
   }
   .home-prog-card {
     flex: 0 0 82vw;
     min-width: 82vw;
     height: 420px;
     scroll-snap-align: center;
+    scroll-snap-stop: always;
   }
   .home-prog-name { font-size: 22px; }
   .home-prog-desc { font-size: 12px; line-height: 1.5; }
