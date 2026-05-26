@@ -226,120 +226,166 @@
       <div class="home-hero">
         <div class="home-hero-overlay"></div>
         <div class="home-hero-text">
-          <p class="home-hero-sub">유튜브로 함께 사업을 키우는<br>커뮤니티형 코칭</p>
-          <h1 class="home-hero-hl">유튜브로 사업을<br>10배 키우세요.</h1>
-          <p class="home-hero-sub2">조회수는 나오는데 매출이 안 된다면,<br>문제는 콘텐츠가 아닙니다.<br>구독자 1천 명으로 매출 10배 만든<br>도와유 코치의 실전 시스템.</p>
-          <button class="home-hero-btn" onclick="nav('story')">도와유 코치는 누구?</button>
+          <h1 class="home-hero-hl">혼자 하다 <span class="home-hero-mark">지쳤다면</span><br>여기로 오세요.</h1>
+          <p class="home-hero-sub2">유튜브로 함께 사업을 10배 키우는,<br class="br-m"> <span class="home-hero-uline">1:1 밀착과외 + 커뮤니티형 코칭</span></p>
         </div>
       </div>
 
       <!-- ── 섹션 2: 문제 제기 + 통계 ── -->
       <div class="home-prob">
-        <h2 class="home-prob-hl s-reveal">혹시 이런 경험 있으신가요?</h2>
-        <div class="home-prob-list">
-          <div class="home-prob-item s-reveal s-reveal-delay-1">
-            <p>유튜브를 해봤지만<br>매출로 연결되지 않는 구조</p>
-          </div>
-          <div class="home-prob-item s-reveal s-reveal-delay-2">
-            <p>VOD 강의를 듣지만<br>실행은 혼자 하게 되는 구조</p>
-          </div>
-          <div class="home-prob-item s-reveal s-reveal-delay-3">
-            <p>결국 혼자하다 멈추는 구조</p>
-          </div>
-        </div>
-        <div class="home-stat-bar s-reveal s-reveal-delay-4">
+
+        <!-- ── 가치 증명 통계 바 (히어로 직하단으로 이동, 카운팅 애니메이션) ── -->
+        <div class="home-stat-bar home-stat-bar--top s-reveal" id="homeStatBar">
           <div class="home-stat-item">
-            <p class="home-stat-num">12<span>만</span></p>
+            <p class="home-stat-num"><span class="home-stat-count" data-target="12">0</span><span>만</span></p>
             <p class="home-stat-label">유튜브 채널 구독자<br>다요록 채널 운영</p>
           </div>
           <div class="home-stat-div"></div>
           <div class="home-stat-item">
-            <p class="home-stat-num">1<span>억</span></p>
+            <p class="home-stat-num"><span class="home-stat-count" data-target="1">0</span><span>억</span></p>
             <p class="home-stat-label">최고 수강생 월 매출</p>
           </div>
           <div class="home-stat-div"></div>
           <div class="home-stat-item">
-            <p class="home-stat-num">3<span>기</span></p>
+            <p class="home-stat-num"><span class="home-stat-count" data-target="3">0</span><span>기</span></p>
             <p class="home-stat-label">연속 마감<br>코칭 프로그램</p>
           </div>
         </div>
-      </div>
 
-      <!-- ── 섹션 3: 풀스크린 인물 섹션 ── -->
-      <div class="home-person">
-        <video class="home-person-iframe" autoplay muted loop playsinline preload="metadata" poster="image/3-poster.jpg">
-          <source src="image/3.mp4" type="video/mp4">
-        </video>
-        <div class="home-person-overlay"></div>
-        <div class="home-person-content">
-          <h2 class="home-person-hl">구독자 말고<br>매출을 키우세요.</h2>
-          <p class="home-person-sub">조회수가 아닌 매출에 집중하는<br>유튜브 사업 전략을 함께 만들어갑니다.</p>
-          <button class="home-person-btn" onclick="nav('program')">10X 부스터로이드 PT 보기</button>
+        <h2 class="home-prob-hl s-reveal">왜 대부분은<br>유튜브로 사업을 키우지 못할까요?</h2>
+
+        <div class="home-prob-narrative">
+          <p class="home-prob-para home-prob-para--lead s-reveal">콘텐츠는 넘쳐납니다.<br>강의도 많고, 방법도 많습니다.</p>
+          <p class="home-prob-para s-reveal">하지만 끝까지 해내는 사람은<br><span class="home-prob-em">거의 없습니다.</span></p>
+
+          <div class="home-prob-divider s-reveal"></div>
+
+          <p class="home-prob-label s-reveal">이유는 단순합니다</p>
+          <p class="home-prob-para s-reveal">대부분의 강의는 <span class="home-prob-em">방법만 전달</span>하고,<br><span class="home-prob-em">실행은 개인에게</span> 맡기기 때문입니다.</p>
+
+          <div class="home-prob-divider s-reveal"></div>
+
+          <p class="home-prob-sub s-reveal">지금 시장은 이런 구조입니다.</p>
         </div>
-      </div>
 
-      <!-- ── 섹션 4: 프로그램 카드 슬라이더 ── -->
-      <div class="home-slider">
-        <span class="home-slider-label s-reveal">10X 부스터로이드 PT</span>
-        <div class="home-slider-track">
-          <div class="home-prog-card s-reveal" style="background-color:#1a1208; background-image: url('image/1%20(1).jpeg')">
-            <div class="home-prog-content">
-              <p class="home-prog-brand">도와유</p>
-              <p class="home-prog-name">1:1 유튜브 코칭</p>
-              <p class="home-prog-desc">타겟 고객이 모이는 채널을 설계하세요</p>
+        <!-- 기울어진 인용 카드 3개 -->
+        <div class="home-prob-quotes">
+          <div class="home-prob-quote home-prob-quote--l s-reveal">"사업 경험 없는 사람이 유튜브를 가르치고…"</div>
+          <div class="home-prob-quote home-prob-quote--r s-reveal s-reveal-delay-1">"대형 유튜버는 VOD로 방법만 전달하고…"</div>
+          <div class="home-prob-quote home-prob-quote--l s-reveal s-reveal-delay-2">"컨설팅은 방향만 제시한 채 끝납니다…"</div>
+        </div>
+
+        <!-- 점 3개 ellipsis -->
+        <div class="home-prob-dots s-reveal"><span></span><span></span><span></span></div>
+
+        <!-- 다크 레드 callout -->
+        <div class="home-prob-callout s-reveal">결국 남는 건 — 실행은 혼자, 피드백 없음, 방향은 흔들림, 지속은 어려움.</div>
+
+        <!-- 골드 인용 강조 펀치라인 -->
+        <h2 class="home-prob-punchline s-reveal">그래서 <span class="home-prob-goldq">"대부분"</span>이 멈춥니다.</h2>
+
+        <h2 class="home-prob-pivot s-reveal">그래서 구조를 바꿨습니다</h2>
+
+        <div class="home-prob-narrative">
+          <p class="home-prob-para s-reveal">도와유는<br>단순히 유튜브만 가르치지 않습니다.</p>
+          <p class="home-prob-para s-reveal">1:1 밀착 코칭과<br>실행 중심 커뮤니티로<br>'사업이 커지는 구조'를 함께 만듭니다.</p>
+        </div>
+
+        <!-- ── 10X 부스터로이드 PT 슬라이더 (섹션 4에서 이동) ── -->
+        <div class="home-slider home-slider--in-prob">
+          <span class="home-slider-label s-reveal">10X 부스터로이드 PT</span>
+          <div class="home-slider-track-wrap">
+            <button type="button" class="home-slider-arrow home-slider-arrow--prev" aria-label="이전 카드" onclick="scrollHomeSlider(-1)">‹</button>
+            <button type="button" class="home-slider-arrow home-slider-arrow--next" aria-label="다음 카드" onclick="scrollHomeSlider(1)">›</button>
+          <div class="home-slider-track" id="homeProgTrack">
+            <div class="home-prog-card s-reveal" style="background-color:#1a1208; background-image: url('image/1%20(1).jpeg')">
+              <div class="home-prog-content">
+                <p class="home-prog-brand">도와유</p>
+                <p class="home-prog-name">1:1 유튜브 코칭</p>
+                <p class="home-prog-desc">타겟 고객이 모이는 채널을 설계하세요</p>
+              </div>
+            </div>
+            <div class="home-prog-card s-reveal s-reveal-delay-1" style="background-color:#08121a; background-image: url('image/1%20(1).jpg')">
+              <div class="home-prog-content">
+                <p class="home-prog-brand">도와유</p>
+                <p class="home-prog-name">사업코칭</p>
+                <p class="home-prog-desc">매주 1:1로 피드백받고 바로 실행하세요</p>
+              </div>
+            </div>
+            <div class="home-prog-card s-reveal s-reveal-delay-2" style="background-color:#0a1a0a; background-image: url('image/1%20(1).png')">
+              <div class="home-prog-content">
+                <p class="home-prog-brand">도와유</p>
+                <p class="home-prog-name">마스터마인드<br>(팀 커뮤니티)</p>
+                <p class="home-prog-desc">함께 실행하는 시스템으로 멈추지 마세요</p>
+              </div>
+            </div>
+            <div class="home-prog-card s-reveal s-reveal-delay-3" style="background-color:#1a080a; background-image: url('image/1%20(2).jpg')">
+              <div class="home-prog-content">
+                <p class="home-prog-brand">도와유</p>
+                <p class="home-prog-name">라이프코칭</p>
+                <p class="home-prog-desc">방향을 잡고 에너지를 키우세요</p>
+              </div>
             </div>
           </div>
-          <div class="home-prog-card s-reveal s-reveal-delay-1" style="background-color:#08121a; background-image: url('image/1%20(1).jpg')">
-            <div class="home-prog-content">
-              <p class="home-prog-brand">도와유</p>
-              <p class="home-prog-name">사업코칭</p>
-              <p class="home-prog-desc">매주 1:1로 피드백받고 바로 실행하세요</p>
-            </div>
+          </div><!-- /.home-slider-track-wrap -->
+          <p class="home-slider-swipe-hint">← 좌우로 넘겨보세요 →</p>
+          <div class="home-dots">
+            <span class="home-dot home-dot-active"></span>
+            <span class="home-dot"></span>
+            <span class="home-dot"></span>
+            <span class="home-dot"></span>
           </div>
-          <div class="home-prog-card s-reveal s-reveal-delay-2" style="background-color:#0a1a0a; background-image: url('image/1%20(1).png')">
-            <div class="home-prog-content">
-              <p class="home-prog-brand">도와유</p>
-              <p class="home-prog-name">마스터마인드<br>(팀 커뮤니티)</p>
-              <p class="home-prog-desc">함께 실행하는 시스템으로 멈추지 마세요</p>
-            </div>
-          </div>
-          <div class="home-prog-card s-reveal s-reveal-delay-3" style="background-color:#1a080a; background-image: url('image/1%20(2).jpg')">
-            <div class="home-prog-content">
-              <p class="home-prog-brand">도와유</p>
-              <p class="home-prog-name">라이프코칭</p>
-              <p class="home-prog-desc">방향을 잡고 에너지를 키우세요</p>
-            </div>
+          <div class="home-slider-cta s-reveal">
+            <button class="home-slider-more-btn" onclick="nav('program')">더 자세히 알아보기 →</button>
           </div>
         </div>
-        <div class="home-dots">
-          <span class="home-dot home-dot-active"></span>
-          <span class="home-dot"></span>
-          <span class="home-dot"></span>
-          <span class="home-dot"></span>
-        </div>
-        <div class="home-slider-cta s-reveal">
-          <button class="home-slider-more-btn" onclick="nav('program')">더 자세히 알아보기 →</button>
-        </div>
-      </div>
 
-      <!-- ── 섹션 5: 수강생 결과 + 채널 격자 (기존 유지) ── -->
-      <div class="home-cards-wrap">
+        <div class="home-prob-narrative home-prob-narrative--wide">
+          <p class="home-prob-sub s-reveal">이 과정을 지나면 달라집니다.</p>
+          <div class="home-prob-results">
+            <div class="home-prob-result-card s-reveal">
+              <span class="home-prob-result-num">01</span>
+              <p class="home-prob-result-text">더 이상 뭘 해야 할지<br>고민하지 않습니다</p>
+            </div>
+            <div class="home-prob-result-card s-reveal s-reveal-delay-1">
+              <span class="home-prob-result-num">02</span>
+              <p class="home-prob-result-text">콘텐츠 방향이<br>흔들리지 않습니다</p>
+            </div>
+            <div class="home-prob-result-card s-reveal s-reveal-delay-2">
+              <span class="home-prob-result-num">03</span>
+              <p class="home-prob-result-text">혼자 하다<br>멈추지 않습니다</p>
+            </div>
+            <div class="home-prob-result-card s-reveal s-reveal-delay-3">
+              <span class="home-prob-result-num">04</span>
+              <p class="home-prob-result-text">유튜브가 실제<br>매출과 연결됩니다</p>
+            </div>
+          </div>
+        </div>
 
-        <!-- ── 수강생 후기 메이슨리 그리드 ── -->
-        <div class="home-review-imgs">
-          <p class="home-review-imgs-label">수강생 후기</p>
+        <!-- ── 클로징: 혼자가 아닙니다 ── -->
+        <div class="home-prob-closing">
+          <p class="home-prob-closing-label s-reveal">그리고 가장 중요한 건</p>
+          <h2 class="home-prob-closing-hl s-reveal">혼자가 <span class="home-prob-goldq">아닙니다</span>.</h2>
+          <p class="home-prob-closing-body s-reveal">내 상황을 이해해주는 코치가 있고,<br>함께 성장하는 동료가 있습니다.</p>
+          <div class="home-prob-closing-line s-reveal"></div>
+          <p class="home-prob-closing-final s-reveal">혼자 버티는 유튜브가 아니라,<br><span class="home-prob-em">함께 성장하는 사업 시스템</span>입니다.</p>
+        </div>
+
+        <!-- ── 수강생 후기 (섹션 5에서 이동) ── -->
+        <div class="home-review-imgs home-review-imgs--in-prob">
+          <p class="home-review-imgs-label s-reveal">수강생 후기</p>
           <div class="home-reviews">
-            <div class="home-review-card">
+            <div class="home-review-card s-reveal">
               <span class="home-review-badge">월 매출 1억 달성</span>
               <p class="home-review-quote">"10년 차 직장인으로 살아오던 저는, 늘 '내 일을 하고 싶다'는 꿈이 있었습니다. '사명 기반 코칭'을 통해 브랜드의 방향이 또렷해지고, 콘텐츠에도 생명이 불어넣어졌습니다. 도와유 코칭 이후 구조가 생겼고, 지금은 월 매출 1억을 달성했습니다."</p>
             </div>
-            <div class="home-review-card">
+            <div class="home-review-card s-reveal s-reveal-delay-1">
               <span class="home-review-badge">런칭 즉시 마감</span>
               <p class="home-review-quote">"제가 도와쌤의 과제로 유튜브를 시작한 지 6개월. 3개월째부터 인생이 바뀌기 시작했습니다. 첫 유료 컨텐츠를 오픈했고, 30명의 정원을 하루만에 마감하며 성공적인 런칭을 했습니다."</p>
             </div>
           </div>
-          <!-- 후기 마퀴 행 1: review (→ 왼쪽) -->
-          <div class="home-marquee-wrap">
+          <!-- 후기 마퀴 행 1: review -->
+          <div class="home-marquee-wrap s-reveal">
             <div class="home-marquee-fade home-marquee-fade--left"></div>
             <div class="home-marquee-fade home-marquee-fade--right"></div>
             <div class="home-marquee-track home-marquee-track--fwd">
@@ -359,8 +405,8 @@
               <div class="home-marquee-item"><img loading="lazy" decoding="async" src="image/review7.png" alt="전문가 유튜브 매출 코칭 후기"></div>
             </div>
           </div>
-          <!-- 후기 마퀴 행 2: gallery (← 오른쪽) -->
-          <div class="home-marquee-wrap" style="margin-top:16px">
+          <!-- 후기 마퀴 행 2: gallery -->
+          <div class="home-marquee-wrap s-reveal" style="margin-top:16px">
             <div class="home-marquee-fade home-marquee-fade--left"></div>
             <div class="home-marquee-fade home-marquee-fade--right"></div>
             <div class="home-marquee-track home-marquee-track--rev">
@@ -381,6 +427,23 @@
             </div>
           </div>
         </div>
+      </div>
+
+      <!-- ── 섹션 3: 풀스크린 인물 섹션 ── -->
+      <div class="home-person">
+        <video class="home-person-iframe" autoplay muted loop playsinline preload="metadata" poster="image/3-poster.jpg">
+          <source src="image/3.mp4" type="video/mp4">
+        </video>
+        <div class="home-person-overlay"></div>
+        <div class="home-person-content">
+          <h2 class="home-person-hl">구독자 말고<br>매출을 키우세요.</h2>
+          <p class="home-person-sub">조회수가 아닌 매출에 집중하는<br>유튜브 사업 전략을 함께 만들어갑니다.</p>
+          <button class="home-person-btn" onclick="nav('program')">10X 부스터로이드 PT 보기</button>
+        </div>
+      </div>
+
+      <!-- ── 섹션 5: 수강생 결과 + 채널 격자 (기존 유지) ── -->
+      <div class="home-cards-wrap">
 
         <!-- ── 섹션 6: 유튜브 채널 ── -->
         <div class="home-content-section">
@@ -1420,6 +1483,16 @@
   initCaseSlider('prog2SliderTrack', 'prog2Dots', 'prog2Prev', 'prog2Next');
   initCaseSlider('pfSliderTrack', 'pfDots', 'pfPrev', 'pfNext');
 
+  // 홈 프로그램 슬라이더 — 좌우 화살표로 한 카드씩 스크롤
+  function scrollHomeSlider(dir) {
+    const track = document.getElementById('homeProgTrack');
+    if (!track) return;
+    const card = track.querySelector('.home-prog-card');
+    const cardW = card ? card.getBoundingClientRect().width : track.clientWidth * 0.82;
+    const gap = 12;
+    track.scrollBy({ left: dir * (cardW + gap), behavior: 'smooth' });
+  }
+
   // 모바일에서 홈 프로그램 슬라이더 — 옆으로 넘길 수 있다는 시각적 힌트(peek)
   (function() {
     if (window.innerWidth > 768) return;
@@ -1446,6 +1519,37 @@
       });
     }, { threshold: 0.4 });
     observer.observe(track);
+  })();
+
+  // 통계 바 카운트업 애니메이션 (화면에 들어오면 0 → 목표값으로 카운트)
+  (function() {
+    const counters = document.querySelectorAll('.home-stat-count');
+    if (!counters.length) return;
+
+    function animateCount(el) {
+      const target = parseInt(el.dataset.target, 10);
+      if (isNaN(target)) return;
+      const duration = 600;
+      const startTime = performance.now();
+      function tick(now) {
+        const t = Math.min((now - startTime) / duration, 1);
+        const eased = 1 - Math.pow(1 - t, 3); // easeOutCubic
+        el.textContent = Math.floor(eased * target).toString();
+        if (t < 1) requestAnimationFrame(tick);
+        else el.textContent = target.toString();
+      }
+      requestAnimationFrame(tick);
+    }
+
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          animateCount(entry.target);
+          obs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.4 });
+    counters.forEach(c => obs.observe(c));
   })();
 </script>
 </body>
