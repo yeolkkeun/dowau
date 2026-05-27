@@ -12,8 +12,14 @@
   <meta name="theme-color" content="#0d0d0b">
 
   <!-- Favicon -->
+  <link rel="icon" href="/favicon.ico" sizes="any" />
   <link rel="icon" type="image/svg+xml" href="image/favicon.svg" />
-  <link rel="apple-touch-icon" href="image/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="image/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="48x48" href="image/favicon-48.png" />
+  <link rel="icon" type="image/png" sizes="96x96" href="image/favicon-96.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="image/favicon-192.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="image/favicon-180.png" />
+  <link rel="shortcut icon" href="/favicon.ico" />
 
   <!-- Canonical -->
   <link rel="canonical" href="https://www.dowwalaps.com/" />
@@ -392,13 +398,27 @@
         <div class="home-review-imgs home-review-imgs--in-prob">
           <p class="home-review-imgs-label s-reveal">수강생 후기</p>
           <div class="home-reviews">
-            <div class="home-review-card s-reveal">
-              <span class="home-review-badge">월 매출 1억 달성</span>
-              <p class="home-review-quote">"10년 차 직장인으로 살아오던 저는, 늘 '내 일을 하고 싶다'는 꿈이 있었습니다. '사명 기반 코칭'을 통해 브랜드의 방향이 또렷해지고, 콘텐츠에도 생명이 불어넣어졌습니다. 도와유 코칭 이후 구조가 생겼고, 지금은 월 매출 1억을 달성했습니다."</p>
+            <div class="home-review-card home-review-card--video s-reveal">
+              <span class="home-review-badge">24살 대표님이 매출 3배 만든 방법</span>
+              <div class="home-review-video-wrap">
+                <iframe src="https://www.youtube.com/embed/R51pa4Ztfm4"
+                        title="수강생 후기 영상 — 24살 대표님이 매출 3배 만든 방법"
+                        loading="lazy"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin"
+                        allowfullscreen></iframe>
+              </div>
             </div>
-            <div class="home-review-card s-reveal s-reveal-delay-1">
-              <span class="home-review-badge">런칭 즉시 마감</span>
-              <p class="home-review-quote">"제가 도와쌤의 과제로 유튜브를 시작한 지 6개월. 3개월째부터 인생이 바뀌기 시작했습니다. 첫 유료 컨텐츠를 오픈했고, 30명의 정원을 하루만에 마감하며 성공적인 런칭을 했습니다."</p>
+            <div class="home-review-card home-review-card--video s-reveal s-reveal-delay-1">
+              <span class="home-review-badge">무의식을 바꾸고 역대급 매출 찍은 대표님</span>
+              <div class="home-review-video-wrap">
+                <iframe src="https://www.youtube.com/embed/sym5QVgVo-w"
+                        title="수강생 후기 영상 — 무의식을 바꾸고 역대급 매출 찍은 대표님"
+                        loading="lazy"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin"
+                        allowfullscreen></iframe>
+              </div>
             </div>
           </div>
           <!-- 후기 마퀴 행 1: review -->
@@ -992,9 +1012,36 @@
         <div class="portfolio-hero-inner">
           <p class="portfolio-kicker">Student Portfolio</p>
           <h1 class="portfolio-hero-title">방법이 아닌 <em>구조가</em><br>만든 결과들.</h1>
-          <p class="portfolio-hero-sub">수강생들의 실제 후기와 유튜브 채널입니다.</p>
         </div>
       </section>
+
+      <!-- 영상 후기 (home과 동일 컴포넌트) -->
+      <div class="portfolio-reviews-wrap">
+        <div class="home-reviews">
+          <div class="home-review-card home-review-card--video s-reveal">
+            <span class="home-review-badge">24살 대표님이 매출 3배 만든 방법</span>
+            <div class="home-review-video-wrap">
+              <iframe src="https://www.youtube.com/embed/R51pa4Ztfm4"
+                      title="수강생 후기 영상 — 24살 대표님이 매출 3배 만든 방법"
+                      loading="lazy"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      referrerpolicy="strict-origin-when-cross-origin"
+                      allowfullscreen></iframe>
+            </div>
+          </div>
+          <div class="home-review-card home-review-card--video s-reveal s-reveal-delay-1">
+            <span class="home-review-badge">무의식을 바꾸고 역대급 매출 찍은 대표님</span>
+            <div class="home-review-video-wrap">
+              <iframe src="https://www.youtube.com/embed/sym5QVgVo-w"
+                      title="수강생 후기 영상 — 무의식을 바꾸고 역대급 매출 찍은 대표님"
+                      loading="lazy"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      referrerpolicy="strict-origin-when-cross-origin"
+                      allowfullscreen></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
 
       <!-- Results Slider (mirrors home/program component) -->
       <div class="prog2-cases">
@@ -1170,7 +1217,6 @@
           <button class="yt-back-btn" onclick="nav('home')">← 홈으로</button>
           <p class="yt-kicker">YouTube · 도와유 채널</p>
           <h1 class="yt-hero-title">도와유 <em>유튜브 채널</em></h1>
-          <p class="yt-hero-sub">구독자 12만의 실전 콘텐츠. 매주 새로운 영상이 올라옵니다.</p>
         </div>
       </section>
 
@@ -1356,6 +1402,18 @@
       .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
       .replace(/"/g, '&quot;').replace(/'/g, '&#39;');
   }
+  // RSS 제목/본문은 이미 HTML 엔티티로 인코딩돼 오는 경우가 많아 한 번 디코드 후 esc 처리
+  function decodeEntities(s) {
+    if (s == null) return '';
+    var ta = document.createElement('textarea');
+    ta.innerHTML = String(s);
+    return ta.value;
+  }
+  function firstImgSrc(html) {
+    if (!html) return '';
+    var m = String(html).match(/<img[^>]+src=["']([^"']+)["']/i);
+    return m ? m[1] : '';
+  }
   // http/https URL만 허용 (javascript:, data: 등 차단)
   function safeUrl(u) {
     var s = String(u || '');
@@ -1375,8 +1433,15 @@
         grid.innerHTML = '';
         data.items.slice(0, 6).forEach(function(item) {
           var date = new Date(item.pubDate).toLocaleDateString('ko-KR', { year: 'numeric', month: '2-digit', day: '2-digit' });
-          var thumb = safeUrl(item.thumbnail || (item.enclosure && item.enclosure.link) || '');
-          var desc = (item.description || '').replace(/<[^>]+>/g, '').trim().slice(0, 80);
+          var thumb = safeUrl(
+            item.thumbnail ||
+            (item.enclosure && item.enclosure.link) ||
+            firstImgSrc(item.content) ||
+            firstImgSrc(item.description) ||
+            ''
+          );
+          var title = decodeEntities(item.title);
+          var desc = decodeEntities((item.description || '').replace(/<[^>]+>/g, '')).trim().slice(0, 80);
           var card = document.createElement('a');
           card.className = 'blog-card';
           card.href = safeUrl(item.link) || '#';
@@ -1385,7 +1450,7 @@
           card.innerHTML =
             '<div class="blog-thumb">' + (thumb ? '<img src="' + esc(thumb) + '" alt="" loading="lazy" referrerpolicy="no-referrer">' : '') + '<div class="blog-cat">블로그</div></div>' +
             '<div class="blog-content">' +
-              '<div class="blog-card-title">' + esc(item.title) + '</div>' +
+              '<div class="blog-card-title">' + esc(title) + '</div>' +
               '<div class="blog-card-desc">' + esc(desc) + (desc.length >= 80 ? '…' : '') + '</div>' +
               '<div class="blog-card-meta"><span>' + esc(date) + '</span><span class="blog-card-arrow">→</span></div>' +
             '</div>';
@@ -1432,7 +1497,7 @@
               '<div class="yt-play"></div>' +
             '</div>' +
             '<div class="yt-content">' +
-              '<div class="yt-card-title">' + esc(item.title) + '</div>' +
+              '<div class="yt-card-title">' + esc(decodeEntities(item.title)) + '</div>' +
               '<div class="yt-card-meta">도와유 · ' + esc(date) + '</div>' +
               '<div class="yt-card-arrow">→</div>' +
             '</div>';
