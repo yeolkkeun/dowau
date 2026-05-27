@@ -907,13 +907,34 @@ nav { flex: 1; }
 }
 
 .home-review-badge {
-  display: block;
-  font-size: 10px;
-  font-weight: 700;
-  color: var(--gold);
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 18px;
+  font-weight: 800;
+  color: #f0ede6;
+  text-transform: none;
+  letter-spacing: -0.01em;
+  line-height: 1.4;
+  margin-bottom: 0;
+}
+.home-review-badge::before {
+  content: "";
+  display: inline-block;
+  width: 4px;
+  height: 22px;
+  background: var(--gold);
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+@media (max-width: 768px) {
+  .home-review-badge {
+    font-size: 15px;
+    gap: 10px;
+  }
+  .home-review-badge::before {
+    height: 18px;
+  }
 }
 
 .home-review-quote {
@@ -1940,15 +1961,13 @@ nav { flex: 1; }
 #home .home-review-quote { color: rgba(255,255,255,0.6); }
 #home .home-review-name { color: #fff; }
 
-/* Portfolio: 영상 후기 컨테이너 (hero ↔ Results 슬라이더 사이) */
-.portfolio-reviews-wrap {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 16px 40px 64px;
+/* Results 섹션 헤더 바로 아래에 들어가는 영상 후기 그리드 */
+.home-reviews.home-reviews--in-results {
+  margin: 32px 0 48px;
 }
 @media (max-width: 768px) {
-  .portfolio-reviews-wrap {
-    padding: 0 20px 32px;
+  .home-reviews.home-reviews--in-results {
+    margin: 20px 0 28px;
   }
 }
 
