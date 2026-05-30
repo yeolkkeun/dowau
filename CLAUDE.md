@@ -106,7 +106,7 @@ CSS 애니메이션 기반 — JS 호출 불필요. HTML만 복제하면 자동 
 
 - 코칭 신청 카카오톡 채널: `https://pf.kakao.com/_xotYHn`
 - 신청서 (Tally): `https://tally.so/r/68KDlA`
-- 전자책: `https://geekus.kr/10xburopt/classroom`
+- 전자책: `https://geekus.kr/10xburopt/classroom/736`
 - 유튜브 채널: `UCmd6ESuIOTy4MyGSCWnvZHA`
 - 블로그: `blog.naver.com/diet-999`
 
