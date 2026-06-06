@@ -11,8 +11,26 @@ function nav(pageId) {
   const main = document.getElementById('main');
   if (main) main.scrollTop = 0;
 
+  // URL 해시 동기화 → 페이지별 개별 링크(공유 가능) 생성
+  // 예: .../index.html#story  (코치 스토리 페이지로 바로 열림)
+  // 홈은 깔끔한 주소 유지를 위해 해시를 제거.
+  const targetHash = pageId === 'home' ? '' : '#' + pageId;
+  if (targetHash !== location.hash) {
+    history.replaceState(null, '', targetHash || location.pathname + location.search);
+  }
+
   if (window.innerWidth <= 768) closeSidebar();
 }
+
+// 해시(#story 등)를 읽어 해당 페이지로 이동. 없거나 잘못된 값이면 home.
+function routeFromHash() {
+  const id = (location.hash || '').replace(/^#/, '');
+  nav(id && document.getElementById(id) ? id : 'home');
+}
+
+// 첫 로드 시 + 브라우저 뒤로/앞으로(주소창 해시 변경) 시 라우팅
+window.addEventListener('hashchange', routeFromHash);
+window.addEventListener('DOMContentLoaded', routeFromHash);
 
 function toggleSidebar() {
   const sidebar = document.getElementById('sidebar');
