@@ -1,5 +1,5 @@
 # 도와유 — 유튜브 사업 코칭
-# https://www.dowwalaps.com
+# https://dowwalabs.com
 
 User-agent: *
 Allow: /
@@ -41,4 +41,4 @@ Allow: /
 User-agent: Daum
 Allow: /
 
-Sitemap: https://www.dowwalaps.com/sitemap.xml
+Sitemap: https://dowwalabs.com/sitemap.xml
