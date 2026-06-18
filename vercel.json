@@ -1,4 +1,12 @@
 {
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "has": [{ "type": "host", "value": "www.dowwalabs.com" }],
+      "destination": "https://dowwalabs.com/$1",
+      "statusCode": 301
+    }
+  ],
   "headers": [
     {
       "source": "/(.*)",
